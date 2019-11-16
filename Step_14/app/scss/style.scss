@@ -1,0 +1,74 @@
+@import "../../node_modules/uikit/src/scss/variables-theme.scss";
+@import "../../node_modules/uikit/src/scss/mixins-theme.scss";
+@import "../../node_modules/uikit/src/scss/uikit-theme.scss";
+
+$panel_height: 64px;
+
+* {
+    box-sizing: border-box;
+}
+
+iframe {
+    position: absolute;
+    top: $panel_height;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - #{$panel_height});
+}
+
+.panel {
+    display: flex;
+    justify-content: flex-end;
+    padding: 12px;
+    height: $panel_height;
+    border-bottom: 1px solid black;
+}
+
+.spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0, .4);
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.8s all;
+    &.active {
+        visibility: visible;
+        opacity: 1;
+    }
+    div {
+        color: #fff;
+        fill: #fff;
+    }
+}
+
+.login-container {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(black, .5);
+    z-index: 2;
+
+    .login {
+        width: 600px;
+        padding: 30px;
+        background-color: #fff;
+        border-radius: 4px;
+    }
+    .login-error {
+        display: block;
+        color: red;
+        margin-top: 10px;
+    }
+}
+
